@@ -50,7 +50,8 @@ Creating docker-django-v2_db_1 ... done
 feng@ubuntu:~/docker-django-v2$ 
 feng@ubuntu:~/docker-django-v2$ sudo chown -R $USER:$USER .
 feng@ubuntu:~/docker-django-v2$ ls -l
-total 24
+total 24WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.1.png)
+
 -rw-r--r-- 1 feng feng  210 Jul 13 20:56 docker-compose.yml
 -rw-r--r-- 1 feng feng  150 Jul 13 20:54 Dockerfile
 drwxr-xr-x 2 feng feng 4096 Jul 13 22:21 koala
@@ -80,4 +81,4 @@ feng@ubuntu:~/docker-django-v2$
 
 enter url 'http://localhost:8000' in browser and you will see
 
-WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.1.png)
+![koala_start_project_01](images/koala_start_project_01.png)
