@@ -1,6 +1,8 @@
-# [Sample Application] (https://docs.docker.com/compose/django/)
+# Django project 'koala' 
 
-WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+## references    
+https://docs.docker.com/compose/django/
+https://blog.devartis.com/django-development-with-docker-a-completed-development-cycle-7322ad8ba508
 
 ## git housekeeping
 
@@ -13,7 +15,7 @@ Enter host password for user 'fen9li': <your github user password>
 feng@ubuntu:~/docker-django-v2$ 
 ```
 
-### git commands 
+### git commands cheatsheet
 ```
 git init
 git remote add origin git@github.com:fen9li/docker-django-v2.git
