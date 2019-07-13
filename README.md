@@ -4,114 +4,37 @@ WARNING: Image for service web was built because it did not already exist. To re
 
 ## git housekeeping
 
-### create new repo in github
+### create new repo in github and extract git_url
 
 ```
-feng@ubuntu:~/docker-django-v2$ curl -u 'fen9li' https://api.github.com/user/repos -d '{"name":"docker-django-v2"}'
+feng@ubuntu:~/docker-django-v2$ curl -u 'fen9li' https://api.github.com/user/repos -d '{"name":"docker-django-v2"}' | jq '.ssh_url'
 Enter host password for user 'fen9li':
-{
-  "id": 196714424,
-  "node_id": "MDEwOlJlcG9zaXRvcnkxOTY3MTQ0MjQ=",
-  "name": "docker-django-v2",
-  "full_name": "fen9li/docker-django-v2",
-  "private": false,
-  "owner": {
-    "login": "fen9li",
-    "id": 15306510,
-    "node_id": "MDQ6VXNlcjE1MzA2NTEw",
-    "avatar_url": "https://avatars3.githubusercontent.com/u/15306510?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/fen9li",
-    "html_url": "https://github.com/fen9li",
-    "followers_url": "https://api.github.com/users/fen9li/followers",
-    "following_url": "https://api.github.com/users/fen9li/following{/other_user}",
-    "gists_url": "https://api.github.com/users/fen9li/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/fen9li/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/fen9li/subscriptions",
-    "organizations_url": "https://api.github.com/users/fen9li/orgs",
-    "repos_url": "https://api.github.com/users/fen9li/repos",
-    "events_url": "https://api.github.com/users/fen9li/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/fen9li/received_events",
-    "type": "User",
-    "site_admin": false
-  },
-  "html_url": "https://github.com/fen9li/docker-django-v2",
-  "description": null,
-  "fork": false,
-  "url": "https://api.github.com/repos/fen9li/docker-django-v2",
-  "forks_url": "https://api.github.com/repos/fen9li/docker-django-v2/forks",
-  "keys_url": "https://api.github.com/repos/fen9li/docker-django-v2/keys{/key_id}",
-  "collaborators_url": "https://api.github.com/repos/fen9li/docker-django-v2/collaborators{/collaborator}",
-  "teams_url": "https://api.github.com/repos/fen9li/docker-django-v2/teams",
-  "hooks_url": "https://api.github.com/repos/fen9li/docker-django-v2/hooks",
-  "issue_events_url": "https://api.github.com/repos/fen9li/docker-django-v2/issues/events{/number}",
-  "events_url": "https://api.github.com/repos/fen9li/docker-django-v2/events",
-  "assignees_url": "https://api.github.com/repos/fen9li/docker-django-v2/assignees{/user}",
-  "branches_url": "https://api.github.com/repos/fen9li/docker-django-v2/branches{/branch}",
-  "tags_url": "https://api.github.com/repos/fen9li/docker-django-v2/tags",
-  "blobs_url": "https://api.github.com/repos/fen9li/docker-django-v2/git/blobs{/sha}",
-  "git_tags_url": "https://api.github.com/repos/fen9li/docker-django-v2/git/tags{/sha}",
-  "git_refs_url": "https://api.github.com/repos/fen9li/docker-django-v2/git/refs{/sha}",
-  "trees_url": "https://api.github.com/repos/fen9li/docker-django-v2/git/trees{/sha}",
-  "statuses_url": "https://api.github.com/repos/fen9li/docker-django-v2/statuses/{sha}",
-  "languages_url": "https://api.github.com/repos/fen9li/docker-django-v2/languages",
-  "stargazers_url": "https://api.github.com/repos/fen9li/docker-django-v2/stargazers",
-  "contributors_url": "https://api.github.com/repos/fen9li/docker-django-v2/contributors",
-  "subscribers_url": "https://api.github.com/repos/fen9li/docker-django-v2/subscribers",
-  "subscription_url": "https://api.github.com/repos/fen9li/docker-django-v2/subscription",
-  "commits_url": "https://api.github.com/repos/fen9li/docker-django-v2/commits{/sha}",
-  "git_commits_url": "https://api.github.com/repos/fen9li/docker-django-v2/git/commits{/sha}",
-  "comments_url": "https://api.github.com/repos/fen9li/docker-django-v2/comments{/number}",
-  "issue_comment_url": "https://api.github.com/repos/fen9li/docker-django-v2/issues/comments{/number}",
-  "contents_url": "https://api.github.com/repos/fen9li/docker-django-v2/contents/{+path}",
-  "compare_url": "https://api.github.com/repos/fen9li/docker-django-v2/compare/{base}...{head}",
-  "merges_url": "https://api.github.com/repos/fen9li/docker-django-v2/merges",
-  "archive_url": "https://api.github.com/repos/fen9li/docker-django-v2/{archive_format}{/ref}",
-  "downloads_url": "https://api.github.com/repos/fen9li/docker-django-v2/downloads",
-  "issues_url": "https://api.github.com/repos/fen9li/docker-django-v2/issues{/number}",
-  "pulls_url": "https://api.github.com/repos/fen9li/docker-django-v2/pulls{/number}",
-  "milestones_url": "https://api.github.com/repos/fen9li/docker-django-v2/milestones{/number}",
-  "notifications_url": "https://api.github.com/repos/fen9li/docker-django-v2/notifications{?since,all,participating}",
-  "labels_url": "https://api.github.com/repos/fen9li/docker-django-v2/labels{/name}",
-  "releases_url": "https://api.github.com/repos/fen9li/docker-django-v2/releases{/id}",
-  "deployments_url": "https://api.github.com/repos/fen9li/docker-django-v2/deployments",
-  "created_at": "2019-07-13T11:34:10Z",
-  "updated_at": "2019-07-13T11:34:10Z",
-  "pushed_at": "2019-07-13T11:34:10Z",
-  "git_url": "git://github.com/fen9li/docker-django-v2.git",
-  "ssh_url": "git@github.com:fen9li/docker-django-v2.git",
-  "clone_url": "https://github.com/fen9li/docker-django-v2.git",
-  "svn_url": "https://github.com/fen9li/docker-django-v2",
-  "homepage": null,
-  "size": 0,
-  "stargazers_count": 0,
-  "watchers_count": 0,
-  "language": null,
-  "has_issues": true,
-  "has_projects": true,
-  "has_downloads": true,
-  "has_wiki": true,
-  "has_pages": false,
-  "forks_count": 0,
-  "mirror_url": null,
-  "archived": false,
-  "disabled": false,
-  "open_issues_count": 0,
-  "license": null,
-  "forks": 0,
-  "open_issues": 0,
-  "watchers": 0,
-  "default_branch": "master",
-  "permissions": {
-    "admin": true,
-    "push": true,
-    "pull": true
-  },
-  "allow_squash_merge": true,
-  "allow_merge_commit": true,
-  "allow_rebase_merge": true,
-  "network_count": 0,
-  "subscribers_count": 0
-}
+"git@github.com:fen9li/docker-django-v2.git"
 feng@ubuntu:~/docker-django-v2$ 
+```
+
+### git commands 
+```
+git init
+git remote add origin git@github.com:fen9li/docker-django-v2.git
+
+feng@ubuntu:~/docker-django-v2$ git remote -v
+origin  git@github.com:fen9li/docker-django-v2.git (fetch)
+origin  git@github.com:fen9li/docker-django-v2.git (push)
+feng@ubuntu:~/docker-django-v2$ 
+
+git add Dockerfile README.md requirements.txt docker-compose.yml 
+git commit -am "Initial commit"
+
+feng@ubuntu:~/docker-django-v2$ git push --set-upstream origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 1.97 KiB | 1007.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To github.com:fen9li/docker-django-v2.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+feng@ubuntu:~/docker-django-v2$
 ```
