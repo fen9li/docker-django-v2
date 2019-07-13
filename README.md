@@ -69,4 +69,13 @@ Creating network "docker-django-v2_default" with the default driver
 Creating docker-django-v2_db_1 ... done
 Creating docker-django-v2_web_1 ... done
 feng@ubuntu:~/docker-django-v2$ 
+
+feng@ubuntu:~/docker-django-v2$ echo */__pycache__ >> .gitignore
+feng@ubuntu:~/docker-django-v2$ 
 ```
+
+## test the project
+
+enter url 'http://localhost:8000' in browser and you will see
+
+![Image of koala_start_project_01](./images/koala_start_project_01.png)
