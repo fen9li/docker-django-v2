@@ -4,11 +4,11 @@ WARNING: Image for service web was built because it did not already exist. To re
 
 ## git housekeeping
 
-### create new repo in github and extract git_url
+### create new repo in github and extract ssh_url
 
 ```
 feng@ubuntu:~/docker-django-v2$ curl -u 'fen9li' https://api.github.com/user/repos -d '{"name":"docker-django-v2"}' | jq '.ssh_url'
-Enter host password for user 'fen9li':
+Enter host password for user 'fen9li': <your github user password>
 "git@github.com:fen9li/docker-django-v2.git"
 feng@ubuntu:~/docker-django-v2$ 
 ```
@@ -37,4 +37,36 @@ To github.com:fen9li/docker-django-v2.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 feng@ubuntu:~/docker-django-v2$
+```
+
+## create django project 'koala'
+
+```
+feng@ubuntu:~/docker-django-v2$ sudo docker-compose run web django-admin startproject koala .
+Creating network "docker-django-v2_default" with the default driver
+Creating docker-django-v2_db_1 ... done
+feng@ubuntu:~/docker-django-v2$ 
+feng@ubuntu:~/docker-django-v2$ sudo chown -R $USER:$USER .
+feng@ubuntu:~/docker-django-v2$ ls -l
+total 24
+-rw-r--r-- 1 feng feng  210 Jul 13 20:56 docker-compose.yml
+-rw-r--r-- 1 feng feng  150 Jul 13 20:54 Dockerfile
+drwxr-xr-x 2 feng feng 4096 Jul 13 22:21 koala
+-rwxr-xr-x 1 feng feng  625 Jul 13 22:21 manage.py
+-rw-r--r-- 1 feng feng 1482 Jul 13 22:19 README.md
+-rw-r--r-- 1 feng feng   36 Jul 13 20:55 requirements.txt
+feng@ubuntu:~/docker-django-v2$ 
+
+feng@ubuntu:~/docker-django-v2$ docker-compose down
+Stopping docker-django-v2_db_1 ... done
+Removing docker-django-v2_web_run_76556932ebea ... done
+Removing docker-django-v2_db_1                 ... done
+Removing network docker-django-v2_default
+feng@ubuntu:~/docker-django-v2$
+
+feng@ubuntu:~/docker-django-v2$ docker-compose up -d
+Creating network "docker-django-v2_default" with the default driver
+Creating docker-django-v2_db_1 ... done
+Creating docker-django-v2_web_1 ... done
+feng@ubuntu:~/docker-django-v2$ 
 ```
