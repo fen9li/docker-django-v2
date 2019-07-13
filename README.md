@@ -1,8 +1,8 @@
 # Django project 'koala' 
 
 ## references    
-https://docs.docker.com/compose/django/
-https://blog.devartis.com/django-development-with-docker-a-completed-development-cycle-7322ad8ba508
+* https://docs.docker.com/compose/django/
+* https://blog.devartis.com/django-development-with-docker-a-completed-development-cycle-7322ad8ba508
 
 ## git housekeeping
 
@@ -80,4 +80,4 @@ feng@ubuntu:~/docker-django-v2$
 
 enter url 'http://localhost:8000' in browser and you will see
 
-![Image of koala_start_project_01](./images/koala_start_project_01.png)
+WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.1.png)
