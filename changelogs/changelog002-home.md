@@ -42,3 +42,30 @@ feng@ubuntu:~/docker-django-v2$ ls -la | grep home
 drwxr-xr-x  3 feng feng 4096 Jul 14 11:24 home
 feng@ubuntu:~/docker-django-v2$  
 ```
+
+## git housekeeping
+
+```
+feng@ubuntu:~/docker-django-v2$ git status
+On branch develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   koala/urls.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        changelogs/changelog002-home.md
+        home/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+feng@ubuntu:~/docker-django-v2$ 
+
+git add .
+git commit -am "Changelog002 add home app"
+git push --set-upstream origin develop
+
+feng@ubuntu:~/docker-django-v2$ 
+```
