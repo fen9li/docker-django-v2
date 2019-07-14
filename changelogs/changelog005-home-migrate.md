@@ -105,3 +105,25 @@ MariaDB [koala]> quit;
 Bye
 feng@ubuntu:~/docker-django-v2$ 
 ```
+
+## add movie model to site admin
+
+```
+feng@ubuntu:~/docker-django-v2$ cat home/admin.py 
+from django.contrib import admin
+
+# Register your models here.
+
+from home.models import Movie
+admin.site.register(Movie)
+feng@ubuntu:~/docker-django-v2$ 
+
+docker-compose down
+docker-compose up -d --build
+
+feng@ubuntu:~/docker-django-v2$ 
+```
+
+* test-01: http://localhost:8000/admin
+
+![koala_add_movie_model_to_admin](../images/koala_add_movie_model_to_admin.png)
