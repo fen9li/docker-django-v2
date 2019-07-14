@@ -32,7 +32,7 @@
             {% endif %}
             <li class="page-item active">
                     <a href="{% url 'home:MovieList' %}?page={{ page_obj.number }}" class="page-link">
-                            {{ page_obj.number }}
+                        {{ page_obj.number }}
                     </a>
             </li>
             {% if page_obj.has_next %}
