@@ -12,3 +12,7 @@
 * test-03: http://localhost:8000/movies/
 
 ![koala_home_movies_view_03](../images/koala_home_movies_view_03.png)
+
+* test-04: http://localhost:8000/movie/3
+
+![koala_custom_404](../images/koala_custom_404.png)
