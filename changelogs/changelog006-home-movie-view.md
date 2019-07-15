@@ -1,0 +1,18 @@
+# add home movie views and reform views by using base view
+
+
+* test-01: http://localhost:8000/movies/
+
+![koala_home_movies_view_01](../images/koala_home_movies_view_01.png)
+
+* test-02: http://localhost:8000/movie/1
+
+![koala_home_movies_view_02](../images/koala_home_movies_view_02.png)
+
+* test-03: http://localhost:8000/movies/
+
+![koala_home_movies_view_03](../images/koala_home_movies_view_03.png)
+
+* test-04: http://localhost:8000/movie/3
+
+![koala_custom_404](../images/koala_custom_404.png)
